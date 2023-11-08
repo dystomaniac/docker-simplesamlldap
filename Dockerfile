@@ -15,6 +15,9 @@ LABEL git-revision=$GIT_REVISION \
       image-name=$IMAGE_NAME \
       maintainer="skapxdev <skapxdev@proton.me>"
 
+# Prepare
+RUN mkdir -p /var/www/simplesamlphp/modules/ldap/ && touch /var/www/simplesamlphp/modules/ldap/enable
+
 # SimpleSAMLphp
 RUN curl -sSL -o /tmp/simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v2.1.0/simplesamlphp-2.1.0.tar.gz && \
     tar xzf /tmp/simplesamlphp.tar.gz -C /tmp && \
