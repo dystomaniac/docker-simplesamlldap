@@ -1,6 +1,6 @@
 # docker-simplesamlldap
 
-Dockerized plug and play SAML 2.0 Identity Provider (IdP) configured for LDAP.
+Dockerized SAML 2.0 Identity Provider (IdP) configured with LDAP module for testing and development.
 
 Built with [SimpleSAMLphp](https://simplesamlphp.org/). Based on [official PHP8 Apache image](https://hub.docker.com/_/php/).
 
