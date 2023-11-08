@@ -16,7 +16,7 @@ LABEL git-revision=$GIT_REVISION \
       maintainer="skapxdev <skapxdev@proton.me>"
 
 # SimpleSAMLphp
-ARG SIMPLESAMLPHP_VERSION
+ARG SIMPLESAMLPHP_VERSION=2.1.0
 RUN curl -sSL -o /tmp/simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v$SIMPLESAMLPHP_VERSION/simplesamlphp-$SIMPLESAMLPHP_VERSION.tar.gz && \
     tar xzf /tmp/simplesamlphp.tar.gz -C /tmp && \
     mv /tmp/simplesamlphp-* /var/www/simplesamlphp && \
