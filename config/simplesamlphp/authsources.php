@@ -113,7 +113,7 @@ $config = array(
          * This is an array with one or more attribute names. Any of the
          * attributes in the array may match the value the username.
          */
-        'search.attributes' => ['uid', 'mail'],
+        'search.attributes' => ['cn', 'mail'],
 
         /**
          * Additional filters that must match for the entire LDAP search to

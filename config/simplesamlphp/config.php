@@ -268,9 +268,9 @@ $config = array(
     'enable.authmemcookie' => false,
 
      'module.enable' => array(
-         'ldap' => TRUE,
-         'saml' => FALSE,
-         'core' => NULL,
+         'ldap' => true,
+         'saml' => false,
+         'core' => true,
      ),
 
 
