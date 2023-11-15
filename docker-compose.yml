@@ -6,10 +6,11 @@ services:
       args:
         SIMPLESAMLPHP_VERSION: "2.1.0"
     environment:
-      SIMPLESAMLPHP_SP_ENTITY_ID: http://app.example.com
+      SIMPLESAMLPHP_SP_ENTITY_ID: http://www.movieking.com
       SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE: http://localhost/simplesaml/module.php/saml/sp/saml2-acs.php/test-sp
       SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE: http://localhost/simplesaml/module.php/saml/sp/saml2-logout.php/test-sp
       SIMPLESAMLPHP_IDP_ADMIN_PASSWORD:
       SIMPLESAMLPHP_IDP_SECRET_SALT:
     ports:
       - "8080:8080"
+    container_name: idp_movieking

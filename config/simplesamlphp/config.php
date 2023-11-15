@@ -513,12 +513,12 @@ $config = array(
         20 => array(
             'class' => 'core:LDAP',
             // LDAP server configuration
-            'hostname' => 'ldap://your-ldap-server',
+            'hostname' => 'ldap://localhost:386',
             'enable_tls' => false, // Set to true if using LDAPS
             'username' => 'ldap-bind-username',
             'password' => 'ldap-bind-password',
             'search.enable' => true,
-            'search.base' => 'ou=people,dc=example,dc=com', // LDAP search base
+            'search.base' => 'dc=movieking,dc=com', // LDAP search base
             'search.attributes' => array('uid', 'mail'), // LDAP attributes to retrieve
         ),
 
@@ -850,5 +850,4 @@ $config = array(
      *   'trusted.url.domains' => array('sp.example.com', 'app.example.com'),
      */
     'trusted.url.domains' => array(),
-
 );

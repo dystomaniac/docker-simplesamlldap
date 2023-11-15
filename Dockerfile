@@ -15,11 +15,9 @@ LABEL git-revision=$GIT_REVISION \
       image-name=$IMAGE_NAME \
       maintainer="skapxdev <skapxdev@proton.me>"
 
-# Prepare
-RUN mkdir -p /var/www/simplesamlphp/modules/ldap/ && touch /var/www/simplesamlphp/modules/ldap/enable
-
 # SimpleSAMLphp
-RUN curl -sSL -o /tmp/simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v2.1.0/simplesamlphp-2.1.0.tar.gz && \
+ARG SIMPLESAMLPHP_VERSION
+RUN curl -sSL -o /tmp/simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v$SIMPLESAMLPHP_VERSION/simplesamlphp-$SIMPLESAMLPHP_VERSION.tar.gz && \
     tar xzf /tmp/simplesamlphp.tar.gz -C /tmp && \
     mv /tmp/simplesamlphp-* /var/www/simplesamlphp && \
     touch /var/www/simplesamlphp/modules/ldap/enable
@@ -29,6 +27,8 @@ COPY config/simplesamlphp/authsources.php /var/www/simplesamlphp/config
 COPY config/simplesamlphp/saml20-sp-remote.php /var/www/simplesamlphp/metadata
 COPY config/simplesamlphp/server.crt /var/www/simplesamlphp/cert/
 COPY config/simplesamlphp/server.pem /var/www/simplesamlphp/cert/
+
+RUN echo "<?php" > /var/www/simplesamlphp/metadata/shib13-sp-remote.php
 
 # Apache
 ENV HTTP_PORT 8080

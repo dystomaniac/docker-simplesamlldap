@@ -12,7 +12,7 @@ $config = array(
          * The connection string for the LDAP-server.
          * You can add multiple by separating them with a space.
          */
-        'connection_string' => 'ldap.example.org',
+        'connection_string' => 'ldap.movieking.com',
 
         /**
          * Whether SSL/TLS should be used when contacting the LDAP server.
@@ -84,7 +84,7 @@ $config = array(
          *
          * This option is not used if the search.enable option is set to TRUE.
          */
-        'dnpattern' => 'uid=%username%,ou=people,dc=example,dc=org',
+        'dnpattern' => 'cn=%username%,dc=movieking,dc=com',
 
         /**
          * As an alternative to specifying a pattern for the users DN, it is
@@ -98,7 +98,7 @@ $config = array(
          * case of multiple strings, they will be searched in the order given.
          */
         'search.base' => [
-            'ou=people,dc=example,dc=org',
+            'dc=movieking,dc=com',
         ],
 
         /**
