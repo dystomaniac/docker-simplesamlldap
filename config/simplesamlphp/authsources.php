@@ -6,7 +6,7 @@ $config = array(
     ),
 
     'ldap' => [
-        'ldap:Ldap',
+        'ldap:LDAP',
         'hostname' => 'ldap.movieking.com',
         'enable_tls' => true,
         'timeout' => 10,

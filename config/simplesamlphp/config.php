@@ -269,7 +269,7 @@ $config = array(
 
      'module.enable' => array(
          'ldap' => true,
-         'saml' => false,
+         'saml' => true,
          'core' => true,
      ),
 
